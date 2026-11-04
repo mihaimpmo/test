@@ -1,6 +1,6 @@
 package org.firstinspires.ftc.teamcode.Subsystems;
 
-import org.firstinspires.ftc.teamcode.Constants;
+import org.firstinspires.ftc.teamcode.Constants.OuttakeConstants;
 import org.firstinspires.ftc.teamcode.Hardware;
 import org.firstinspires.ftc.teamcode.MathUtils;
 
@@ -17,12 +17,13 @@ public class Outtake {
         isActive = true;
     }
     public void start(double scale) {
-        hardware.bigShooter.setPower(MathUtils.clamp(Constants.BIG_SHOOTER_POWER_ON*scale, -1, 1));
-        hardware.smallShooter.setPower(MathUtils.clamp(Constants.SMALL_SHOOTER_POWER_ON*scale, -1, 1));
+        hardware.bigShooter.setPower(MathUtils.clamp(OuttakeConstants.BIG_SHOOTER_POWER_ON*scale, -1, 1));
+        hardware.smallShooter.setPower(MathUtils.clamp(OuttakeConstants.SMALL_SHOOTER_POWER_ON*scale, -1, 1));
         isActive = true;
     }
     public void stop() {
         hardware.bigShooter.setPower(0);
+        hardware.smallShooter.setPower(0);
         isActive = false;
     }
     public void toggle() {

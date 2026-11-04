@@ -13,10 +13,12 @@ public class Robot extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         Hardware hardware = new Hardware(hardwareMap);
         Outtake outtake = new Outtake(hardware);
+
         outtake.stop();
         waitForStart();
         while (opModeIsActive()) {
             if(gamepad1.aWasPressed()) outtake.toggle();
+
         }
     }
 }
