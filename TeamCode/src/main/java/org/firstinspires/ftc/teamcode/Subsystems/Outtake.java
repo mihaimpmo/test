@@ -17,7 +17,8 @@ public class Outtake {
         isActive = true;
     }
     public void start(double scale) {
-        hardware.bigShooter.setPower(MathUtils.clamp(Constants.BIG_SHOOTER_POWER*scale, -1, 1));
+        hardware.bigShooter.setPower(MathUtils.clamp(Constants.BIG_SHOOTER_POWER_ON*scale, -1, 1));
+        hardware.smallShooter.setPower(MathUtils.clamp(Constants.SMALL_SHOOTER_POWER_ON*scale, -1, 1));
         isActive = true;
     }
     public void stop() {
